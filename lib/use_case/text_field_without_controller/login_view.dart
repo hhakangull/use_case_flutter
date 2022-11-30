@@ -19,6 +19,7 @@ class LoginView extends StatefulWidget {
 class _LoginViewState extends State<LoginView> with LoginController {
   late final ClearTextAction textAction;
   late final ControllerCleaner _controllerCleaner;
+  // ignore: unused_field
   String _value = '';
   @override
   void initState() {
