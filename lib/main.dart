@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'use_case/cancelable_auto_complete/auto_cancelable.dart';
+import 'use_case/generic_log/generic_home_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const AutoCancelable(),
+      home: const GenericHomeView(),
     );
   }
 }
