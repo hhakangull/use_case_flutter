@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'use_case/generic_filter/filter_home_view.dart';
+import 'package:use_case_flutter/use_case/modular_field/modular_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const FilterHomeView(),
+      home: const ModularView(),
     );
   }
 }
