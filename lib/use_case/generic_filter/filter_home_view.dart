@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:use_case_flutter/use_case/generic_filter/model/color_model.dart';
 import 'package:use_case_flutter/use_case/generic_filter/model/country.dart';
 
 import 'filter_view.dart';
@@ -22,16 +23,15 @@ class _FilterHomeViewState extends State<FilterHomeView> {
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.add),
         onPressed: () async {
-          final result = await showModalBottomSheet<Country>(
-            context: context,
-            builder: (context) {
-              return FilterView<Country>(values: _cities);
-            },
-          );
+          final result = await FilterView<ColorModels>(values: ColorsEnum.models)
+              .showSheet(context: context, items: ColorsEnum.models);
+          // final result2 = FilterView<Country>(values: Countries.models)
+          //     .showSheet(context: context, items: Countries.models);
 
           if (result == null) return;
+          // if (result2 == null) return;
           setState(() {
-            _name = result.country.uniqName;
+            _name = result.key;
           });
         },
       ),

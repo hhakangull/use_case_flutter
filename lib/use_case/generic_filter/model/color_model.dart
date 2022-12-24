@@ -10,6 +10,10 @@ enum ColorsEnum {
 
   final Color uniqueColors;
   const ColorsEnum(this.uniqueColors);
+
+  static List<ColorModels> get models {
+    return ColorsEnum.values.map((e) => ColorModels(e)).toList();
+  }
 }
 
 class ColorModels extends IFilter {

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
 
+import 'mixin/show_sheet_mixin.dart';
+
 abstract class IFilter {
   String get key;
   int get id;
@@ -58,5 +60,15 @@ class _FilterViewState<T> extends State<FilterView> {
         ),
       ],
     );
+  }
+}
+
+extension FilterViewExtension on FilterView {
+  Future<T?> showSheet<T extends IFilter>({required BuildContext context, required List<T> items}) async {
+    await ShowSheetMixin.showModalCustomSheet<T>(
+      context: context,
+      child: FilterView<T>(values: items),
+    );
+    return null;
   }
 }
